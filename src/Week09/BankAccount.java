@@ -15,6 +15,13 @@ public class BankAccount
         this.hasOverdraft = hasOverdraft;
     }
 
+    public BankAccount(String accountHolder) {
+        this.accountHolder = accountHolder;
+        this.balance = 0;
+        this.hasOverdraft = false;
+        this.accountNumber = new BankAccountRandom().getAccountNumber();
+    }
+
     public String getAccountNumber ()
     {
         return accountNumber;
