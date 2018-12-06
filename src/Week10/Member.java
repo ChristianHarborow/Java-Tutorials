@@ -44,18 +44,4 @@ public class Member {
     public String toString () {
         return "Member: " + this.getName () + ". Contribution: " + this.getContribution () + '.';
     }
-
-    public static void main (String[] args) {
-
-        Member theGrinch = new Member ("The Grinch");
-        Member cindyLouWho = new Member ("Cindy Lou Who");
-
-        theGrinch.contribute (0);
-        theGrinch.contribute (-1000000);
-        cindyLouWho.contribute (100);
-
-        System.out.println (theGrinch);
-        System.out.println (cindyLouWho);
-
-    }
 }
