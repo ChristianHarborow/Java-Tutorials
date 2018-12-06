@@ -14,7 +14,7 @@ public class Club {
     }
 
     public void printMembers () {
-        System.out.println("Current members\n");
+        System.out.println("Current members:");
         for (Member m: members) {
             System.out.println (m);
         }
@@ -45,6 +45,5 @@ public class Club {
         int total = christmasClub.calculateTotal();
         System.out.println("\nTotal Contributions: £" + total);
         System.out.println("Turkeys Required: " + christmasClub.calculateTurkeys(total, turkeyPrice));
-
     }
 }
