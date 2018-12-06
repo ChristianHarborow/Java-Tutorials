@@ -22,8 +22,8 @@ public class Club {
 
     public int calculateTotal () {
         int total = 0;
-        for (Member member: members) {
-            total += member.getContribution();
+        for (Member m: members) {
+            total += m.getContribution();
         }
         return total;
     }
