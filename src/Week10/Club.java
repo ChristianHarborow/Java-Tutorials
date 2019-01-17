@@ -10,25 +10,30 @@ public class Club {
     }
 
     public void addMember (Member newMember) {
+        //adds members to the club array list
         members.add (newMember);
     }
 
     public void printMembers () {
-        System.out.println("Current members\n");
+        /*prints out all members in the club
+        along with their contributions*/
+        System.out.println("Current members:");
         for (Member m: members) {
             System.out.println (m);
         }
     }
 
     public int calculateTotal () {
+        //returns the sum of all the members contributions
         int total = 0;
-        for (Member member: members) {
-            total += member.getContribution();
+        for (Member m: members) {
+            total += m.getContribution();
         }
         return total;
     }
 
     public int calculateTurkeys (int total, int price) {
+        // returns the number of turkeys that can be bought
         return total / price;
     }
 
@@ -43,8 +48,8 @@ public class Club {
 
         christmasClub.printMembers();
         int total = christmasClub.calculateTotal();
+        int turkeys = christmasClub.calculateTurkeys(total, turkeyPrice);
         System.out.println("\nTotal Contributions: £" + total);
-        System.out.println("Turkeys Required: " + christmasClub.calculateTurkeys(total, turkeyPrice));
-
+        System.out.println("Turkeys Required: " + turkeys);
     }
 }
