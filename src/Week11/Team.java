@@ -1,7 +1,7 @@
 package Week11;
 
-public class Team {
-    private String teamName;
+public class Team implements Comparable <Team>{
+    private String TEAM_NAME;
     private int gamesPlayed;
     private int gamesWon;
     private int gamesDrawn;
@@ -12,15 +12,15 @@ public class Team {
     private int points;
 
     public Team(String teamName) {
-        this.teamName = teamName;
-        this.gamesPlayed = 0;
-        this.gamesWon = 0;
-        this.gamesDrawn = 0;
-        this.gamesLost = 0;
-        this.scored = 0;
-        this.conceded = 0;
-        this.pointsDifference = 0;
-        this.points = 0;
+        this.TEAM_NAME = teamName;
+    }
+
+    public int getPointsDifference() {
+        return pointsDifference;
+    }
+
+    public int getPoints() {
+        return points;
     }
 
     public void playMatch(int scored, int conceded){
@@ -42,9 +42,30 @@ public class Team {
         }
     }
 
+    public void printFormatted () {
+        String formatString = "%-25s %7s %4s %6s %5s %4s %8s %9s %7s";
+        System.out.println (String.format (formatString, this.TEAM_NAME, this.gamesPlayed, this.gamesWon,
+                this.gamesDrawn, this.gamesLost, this.scored, this.conceded, this.pointsDifference, this.points));
+    }
 
     @Override
-    public String toString () {
-        return "";
+    public int compareTo (Team team) {
+        if (team.getPoints() > this.points) {
+            return 1;
+        }
+        else if (team.getPoints() == this.points) {
+            if (team.getPointsDifference() > this.pointsDifference){
+                return 1;
+            }
+            else if (team.getPointsDifference() < this.pointsDifference){
+                return -1;
+            }
+            else {
+                return 0;
+            }
+        }
+        else {
+            return -1;
+        }
     }
 }
