@@ -77,7 +77,7 @@ public class BankAccount {
 
     @Override
     public String toString () {
-        final StringBuilder sb = new StringBuilder ("BankAccount{");
+        final StringBuilder sb = new StringBuilder ("CurrentAccount{");
         sb.append ("accountNumber='").append (accountNumber).append ('\'');
         sb.append (", accountHolder='").append (accountHolder).append ('\'');
         sb.append (", balance=").append (balance);
