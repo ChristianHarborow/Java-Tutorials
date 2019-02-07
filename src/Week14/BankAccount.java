@@ -1,12 +1,12 @@
-package Week13;
+package Week14;
 
-public class CurrentAccount {
+abstract class BankAccount {
+    private String accountHolder;
     private double balance;
-    private double overdraft;
 
-    public CurrentAccount(double balance, double overdraft) {
-        this.balance = balance;
-        this.overdraft = overdraft;
+    public BankAccount(String accountHolder){
+        this.accountHolder = accountHolder;
+        this.balance = 0;
     }
 
     public boolean deposit (double amount) {
@@ -20,12 +20,20 @@ public class CurrentAccount {
     }
 
     public boolean withdraw (double amount) {
-        if (amount > 0 && this.balance - amount >= -this.overdraft) {
+        if (amount > 0 && this.balance - amount >= 0) {
             this.balance -= amount;
             return true;
         }
         else {
             return false;
         }
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public double getBalance() {
+        return balance;
     }
 }
