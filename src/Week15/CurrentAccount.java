@@ -1,11 +1,11 @@
-package Week14;
+package Week15;
 
-public class StudentAccount extends BankAccount{
+public class CurrentAccount extends BankAccount {
     private double overdraft;
 
-    public StudentAccount(String accountHolder) {
+    public CurrentAccount(String accountHolder, double overdraft){
         super(accountHolder);
-        this.overdraft = 500;
+        this.overdraft = overdraft;
     }
 
     @Override
