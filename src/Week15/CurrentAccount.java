@@ -10,8 +10,8 @@ public class CurrentAccount extends BankAccount {
 
     @Override
     public boolean withdraw(double amount){
-        if (amount > 0 && this.getBalance() - amount >= -this.overdraft) {
-            this.setBalance(this.getBalance() - amount);
+        if (amount > 0 && this.balance - amount >= -this.overdraft) {
+            this.balance -= amount;
             return true;
         }
         else {
